@@ -1,0 +1,25 @@
+.bg_image{
+    
+    background-image: url("/resources/img/background_2.jpg");
+    overflow: hidden;
+}
+
+.color-white
+{
+    color: #FFFFFF;
+}
+
+.login-box-shadow{
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(94,98,102,1);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(94,98,102,1);
+    box-shadow: 5px 5px 10px 0px rgba(94,98,102,1);
+}
+
+#overlay{
+    position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    right:0px;
+    background-color:rgba(94,98,102,0.5);
+}

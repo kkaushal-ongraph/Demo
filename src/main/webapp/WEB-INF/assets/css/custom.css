@@ -1,0 +1,56 @@
+.text-size-16{
+    font-size: 16px !important;
+}
+
+.sidebar-image{
+    background-image: url("../img/sidebar-2.jpg");
+}
+
+.navbar-purple
+{
+    background-color: #9c27b0 !important;
+    box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0 rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2) !important;
+    color:white !important;
+}
+
+.main-panel {
+    overflow-x: hidden;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.color-green{
+    background: rgba(0, 0, 0, 0) linear-gradient(60deg, #66bb6a, #43a047) repeat scroll 0 0 !important;
+    box-shadow: 0 12px 20px -10px rgba(76, 175, 80, 0.28), 0 4px 20px 0 rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(76, 175, 80, 0.2) !important;
+    color:white;
+}
+
+.navbar .nav > li > a {
+    color: #777;
+    text-shadow: none;
+}
+
+#active_title{
+                  background: #28b75c;
+                  color: white;
+              }
+#active_title > h5 {
+    color :white;
+}
+
+#active_table.table  td{
+    font-size: 12px;
+}
+
+#inactive_table.table  td{
+    font-size: 12px;
+}
+
+#active_table.table th {
+    font-size: 14px;
+}
+
+#inactive_table.table  th {
+    font-size: 14px;
+
+}
