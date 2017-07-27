@@ -223,17 +223,17 @@
       </dependency>
 
       <!-- https://mvnrepository.com/artifact/atg.taglib.json/json-taglib -->
-      <dependency>
+      <!--<dependency>
           <groupId>atg.taglib.json</groupId>
           <artifactId>json-taglib</artifactId>
           <version>0.4.1</version>
-      </dependency>
+      </dependency>-->
 
 
 
   </dependencies>
   <build>
-    <finalName>MeetOrEat</finalName>
+    <finalName>SampleWebProject</finalName>
       <plugins>
           <plugin>
               <groupId>org.liquibase</groupId>

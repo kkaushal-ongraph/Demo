@@ -1,5 +1,5 @@
 # Demo
-This is the sample web application developed by using spring, hibernate and maven.
+This is the sample web application developed by using spring, hibernate and maven. This project contains login functionality, after login users redirects to the dashboard page and can see user details as well.
 
 # System requirements to run the application on your local system
 
