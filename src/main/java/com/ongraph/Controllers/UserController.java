@@ -1,8 +1,7 @@
-package com.maxproductions.Controllers;
+package com.ongraph.Controllers;
 
-import com.maxproductions.dto.MoeUserDetailListDto;
-import com.maxproductions.entities.MeetUserEntity;
-import com.maxproductions.services.UserService;
+import com.ongraph.dto.UsersDTO;
+import com.ongraph.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by agarw on 02-06-2017.
@@ -36,18 +31,18 @@ public class UserController {
 
 
     @RequestMapping(value = "/users/getUserDetailList", method = RequestMethod.GET)
-    public ResponseEntity<MoeUserDetailListDto> getUserList(){
+    public ResponseEntity<UsersDTO> getUserList(){
         try{
             //HashMap<String , List<MoeUser>> userList = new HashMap();
             /*userList.put("ActiveUsers", userService.getAllActiveUsers() );
             userList.put("InActiveUsers", userService.getAllInactiveUsers());
             */
-            MoeUserDetailListDto details = userService.getUserDetailList();
-            return new ResponseEntity<MoeUserDetailListDto>(details, HttpStatus.OK);
+            UsersDTO details = userService.getUserDetailList();
+            return new ResponseEntity<UsersDTO>(details, HttpStatus.OK);
         }
         catch (Exception e){
             e.printStackTrace();
-            return new ResponseEntity<MoeUserDetailListDto>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<UsersDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

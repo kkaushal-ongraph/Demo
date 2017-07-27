@@ -1,6 +1,6 @@
-package com.maxproductions.dto;
+package com.ongraph.dto;
 
-import com.maxproductions.entities.MeetUserEntity;
+import com.ongraph.entities.UserEntity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,14 +8,14 @@ import java.util.List;
 /**
  * Created by agarw on 05-06-2017.
  */
-public class MoeUserDetailListDto {
+public class UsersDTO {
 
     //Data Members
     private long total_users;
     private long total_active_users;
     private long total_inactive_users;
-    private List<MeetUserEntity> active_users = new ArrayList<MeetUserEntity>();
-    private List<MeetUserEntity> inactive_users = new ArrayList<MeetUserEntity>();
+    private List<UserEntity> active_users = new ArrayList<UserEntity>();
+    private List<UserEntity> inactive_users = new ArrayList<UserEntity>();
 
     //Getters and Setters
     public long getTotal_users() {
@@ -34,19 +34,19 @@ public class MoeUserDetailListDto {
         this.total_active_users = total_active_users;
     }
 
-    public List<MeetUserEntity> getActive_users() {
+    public List<UserEntity> getActive_users() {
         return active_users;
     }
 
-    public void setActive_users(List<MeetUserEntity> active_users) {
+    public void setActive_users(List<UserEntity> active_users) {
         this.active_users = active_users;
     }
 
-    public List<MeetUserEntity> getInactive_users() {
+    public List<UserEntity> getInactive_users() {
         return inactive_users;
     }
 
-    public void setInactive_users(List<MeetUserEntity> inactive_users) {
+    public void setInactive_users(List<UserEntity> inactive_users) {
         this.inactive_users = inactive_users;
     }
 

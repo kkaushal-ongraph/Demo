@@ -7,7 +7,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:property-placeholder location="classpath*:hibernate.properties"/>
-    <context:component-scan base-package="com.maxproductions" />
+    <context:component-scan base-package="com.ongraph" />
 
 
     <mvc:resources mapping="/resources/**" location="WEB-INF/assets/" cache-period="8400"/>
@@ -36,13 +36,13 @@
 
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
         <property name="dataSource" ref="datasource"/>
-        <property name="packagesToScan" value="com.maxproductions.entities"/>
+        <property name="packagesToScan" value="com.ongraph.entities"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
                 <prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
                 <prop key="format_sql">${hibernate.format_sql}</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/meetoreat_v001</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/meetoreat_v001?createDatabaseIfNotExist=true</prop>
                 <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
             </props>
         </property>

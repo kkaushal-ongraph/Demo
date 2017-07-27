@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
-	<title>Meet Or Eat Dashboard</title>
+	<title>Project Dashboard</title>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
@@ -26,7 +26,7 @@
 <body>
 <!--Header-part-->
 <div id="header">
-	<h1><a href="/dashboard">Meet or Eat</a></h1>
+	<h1><a href="/dashboard">Ongraph Web Project</a></h1>
 </div>
 <!--close-Header-part-->
 <div id="user-nav" class="navbar navbar-fixed-top">

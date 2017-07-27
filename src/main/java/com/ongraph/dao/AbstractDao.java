@@ -1,4 +1,4 @@
-package com.maxproductions.dao;
+package com.ongraph.dao;
 
 import java.io.Serializable;
 
@@ -11,7 +11,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 

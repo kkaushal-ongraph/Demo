@@ -5,8 +5,8 @@
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          id="WebApp_ID" version="3.0">
 
-  <display-name>Meet Or Eat</display-name>
-  <description>Web Application by Max Production and Ongraph Technologies. Developed by Amit Agarwal</description>
+  <display-name>Sample Web Project</display-name>
+  <description>Web Application by Ongraph Technologies.</description>
 
 
   <!-- Context Loader Listener -->
@@ -17,17 +17,14 @@
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
-      /WEB-INF/meetoreat-dispatcher-servlet.xml,
+      /WEB-INF/dispatcher-servlet.xml,
       /WEB-INF/spring-security.xml
     </param-value>
   </context-param>
 
-
-
-
   <!-- Spring MVC -->
   <servlet>
-    <servlet-name>meetoreat-dispatcher</servlet-name>
+    <servlet-name>dispatcher</servlet-name>
 
     <servlet-class>
       org.springframework.web.servlet.DispatcherServlet
@@ -38,10 +35,9 @@
 
 
   <servlet-mapping>
-    <servlet-name>meetoreat-dispatcher</servlet-name>
+    <servlet-name>dispatcher</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-
 
   <!-- Spring Security Filter -->
   <filter>

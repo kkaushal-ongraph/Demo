@@ -1,11 +1,9 @@
-package com.maxproductions.services.implementations.core;
+package com.ongraph.services.implementations.core;
 
-import com.maxproductions.dao.MeetUserDao;
-import com.maxproductions.entities.MeetUserEntity;
-import com.maxproductions.entities.MeetUsertypesEntity;
-import com.sun.org.apache.regexp.internal.RE;
+import com.ongraph.dao.UserDAO;
+import com.ongraph.entities.UserEntity;
+import com.ongraph.entities.UserTypesEntity;
 import org.apache.commons.lang.StringUtils;
-import org.hibernate.boot.jaxb.SourceType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -27,33 +25,33 @@ import java.util.Set;
 public class CustomUserDetailService implements UserDetailsService{
 
     @Autowired
-    MeetUserDao meetUserDao;
+    UserDAO userDAO;
 
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         System.out.println("email :"  + email);
-        MeetUserEntity l_user = meetUserDao.findUserbyEmail(email);
-        MeetUsertypesEntity usertypesEntity = l_user.getUsertypesByAccessType();
+        UserEntity l_user = userDAO.findUserbyEmail(email);
+        UserTypesEntity usertypesEntity = l_user.getUsertypesByAccessType();
         List<GrantedAuthority> authorities = buildUserforAuthorities(usertypesEntity);
         UserDetails authUser = buildUsersforAuthentication(l_user, authorities);
 
         return authUser;
     }
 
-    private UserDetails buildUsersforAuthentication(MeetUserEntity l_user, List<GrantedAuthority> authorities)
+    private UserDetails buildUsersforAuthentication(UserEntity l_user, List<GrantedAuthority> authorities)
         {
             return new User(l_user.getEmail(), l_user.getPassword(), l_user.getActive(),
                     true, true, true, authorities);
     }
 
 
-    private List<GrantedAuthority> buildUserforAuthorities(MeetUsertypesEntity subtypeEntity) {
+    private List<GrantedAuthority> buildUserforAuthorities(UserTypesEntity subtypeEntity) {
 
         Set<GrantedAuthority> setAuths = new HashSet<GrantedAuthority>();
 
         // Build user's authorities
             setAuths.add(new SimpleGrantedAuthority(StringUtils.upperCase(subtypeEntity.getTypeName())));
             System.out.println("Auth size: " + setAuths.size());
-            MeetUsertypesEntity parent_role = subtypeEntity.getUsertypesByParent();
+            UserTypesEntity parent_role = subtypeEntity.getUsertypesByParent();
             if(null != parent_role)
                 setAuths.add(new SimpleGrantedAuthority(parent_role.getTypeName()));
 

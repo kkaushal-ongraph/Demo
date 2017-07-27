@@ -1,4 +1,4 @@
-package com.maxproductions.entities;
+package com.ongraph.entities;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -8,12 +8,12 @@ import java.util.Collection;
  */
 @Entity
 @Table(name = "usertypes", schema = "meetoreat_v001", catalog = "")
-public class MeetUsertypesEntity {
+public class UserTypesEntity {
     private int id;
     private String typeName;
-    private Collection<MeetUserEntity> usersById;
-    private MeetUsertypesEntity usertypesByParent;
-    private Collection<MeetUsertypesEntity> usertypesById;
+    private Collection<UserEntity> usersById;
+    private UserTypesEntity usertypesByParent;
+    private Collection<UserTypesEntity> usertypesById;
 
     @Id
     @Column(name = "id", nullable = false)
@@ -40,7 +40,7 @@ public class MeetUsertypesEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        MeetUsertypesEntity that = (MeetUsertypesEntity) o;
+        UserTypesEntity that = (UserTypesEntity) o;
 
         if (id != that.id) return false;
         if (typeName != null ? !typeName.equals(that.typeName) : that.typeName != null)
@@ -57,30 +57,30 @@ public class MeetUsertypesEntity {
     }
 
     /*@OneToMany(mappedBy = "usertypesByAccessType", fetch = FetchType.EAGER)
-    public Collection<MeetUserEntity> getUsersById() {
+    public Collection<UserEntity> getUsersById() {
         return usersById;
     }
 
-    public void setUsersById(Collection<MeetUserEntity> usersById) {
+    public void setUsersById(Collection<UserEntity> usersById) {
         this.usersById = usersById;
     }*/
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "parent", referencedColumnName = "id")
-    public MeetUsertypesEntity getUsertypesByParent() {
+    public UserTypesEntity getUsertypesByParent() {
         return usertypesByParent;
     }
 
-    public void setUsertypesByParent(MeetUsertypesEntity usertypesByParent) {
+    public void setUsertypesByParent(UserTypesEntity usertypesByParent) {
         this.usertypesByParent = usertypesByParent;
     }
 
     @OneToMany(mappedBy = "usertypesByParent", fetch = FetchType.EAGER)
-    public Collection<MeetUsertypesEntity> getUsertypesById() {
+    public Collection<UserTypesEntity> getUsertypesById() {
         return usertypesById;
     }
 
-    public void setUsertypesById(Collection<MeetUsertypesEntity> usertypesById) {
+    public void setUsertypesById(Collection<UserTypesEntity> usertypesById) {
         this.usertypesById = usertypesById;
     }
 }

@@ -1,4 +1,4 @@
-package com.maxproductions.entities;
+package com.ongraph.entities;
 
 import org.hibernate.annotations.Type;
 
@@ -10,7 +10,7 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "user", schema = "meetoreat_v001", catalog = "")
-public class MeetUserEntity {
+public class UserEntity {
     private String username;
     private String email;
     private String password;
@@ -24,7 +24,7 @@ public class MeetUserEntity {
     private String pHash;
     private Integer addressid;
     private Boolean active;
-    private MeetUsertypesEntity usertypesByAccessType;
+    private UserTypesEntity usertypesByAccessType;
 
     @Basic
     @Column(name = "username", nullable = true, length = 45)
@@ -162,7 +162,7 @@ public class MeetUserEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        MeetUserEntity that = (MeetUserEntity) o;
+        UserEntity that = (UserEntity) o;
 
         if (userid != that.userid) return false;
         if (username != null ? !username.equals(that.username) : that.username != null)
@@ -213,11 +213,11 @@ public class MeetUserEntity {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accessType", referencedColumnName = "id")
-    public MeetUsertypesEntity getUsertypesByAccessType() {
+    public UserTypesEntity getUsertypesByAccessType() {
         return usertypesByAccessType;
     }
 
-    public void setUsertypesByAccessType(MeetUsertypesEntity usertypesByAccessType) {
+    public void setUsertypesByAccessType(UserTypesEntity usertypesByAccessType) {
         this.usertypesByAccessType = usertypesByAccessType;
     }
 }

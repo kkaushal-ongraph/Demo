@@ -10,7 +10,7 @@
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>Meet or Eat</title>
+    <title>Ongraph Project</title>
     <link rel="stylesheet" href="/resources/css/login.css">
 
 </head>

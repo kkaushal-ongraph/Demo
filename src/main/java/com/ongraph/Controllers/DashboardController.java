@@ -1,4 +1,4 @@
-package com.maxproductions.Controllers;
+package com.ongraph.Controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
